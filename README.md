@@ -53,7 +53,6 @@ npm install
 npm start
 
 ### 3️⃣ Setup Frontend
-```bash
 cd frontend
 npm install
 npm run dev
@@ -119,7 +118,6 @@ npm install
 npm start
 
 ### 3. Setup Frontend
-```bash
 cd frontend
 npm install
 npm run dev
