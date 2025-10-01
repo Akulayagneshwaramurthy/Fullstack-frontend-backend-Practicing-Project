@@ -121,3 +121,37 @@ npm start
 cd frontend
 npm install
 npm run dev
+
+
+# Full Stack Project: Travel Blog
+
+This project demonstrates a complete **Full Stack Web Application** using **Travel Blog** with authentication and CRUD operations.
+
+---
+
+## 🚀 Features
+
+### 🔹 Backend (Node.js + Express.js)
+- Implemented **CRUD Operations** (GET, POST, PUT, DELETE)
+- **Middleware-powered Authentication** (Login & Signup)
+- RESTful API for frontend integration
+
+### 🔹 Frontend (React.js)
+- **State Management** using `useState` & `useEffect`
+- **API Calls** with `axios`
+- **Modern UI** styled using `Tailwind CSS`
+
+---
+
+## 📂 Tech Stack
+- **Backend:** Node.js, Express.js  
+- **Frontend:** React.js, Axios, Tailwind CSS  
+- **Authentication:** Custom Middleware  
+
+---
+
+## ⚡ Getting Started
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
