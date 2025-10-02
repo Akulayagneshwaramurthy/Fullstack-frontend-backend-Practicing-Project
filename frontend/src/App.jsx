@@ -10,18 +10,20 @@ import Form from './Blog/form'
 import Login from './Blog/Login'
 import EditForm from './Blog/EditForm';
 import Signup from './Blog/Signup'
+import LoginSignup from './Library System/LoginSignup'
 
 function App() {
 
   return (
     <>
-    <Routes>
+    <LoginSignup/>
+    {/* <Routes>
       <Route path='/blog' element={<Blog/>} />
       <Route path='/form' element={<Form/>} />
       <Route path="/edit/:id" element={<EditForm />} />
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<Signup/>} />
-    </Routes>
+    </Routes> */}
     </>
   )
 }
