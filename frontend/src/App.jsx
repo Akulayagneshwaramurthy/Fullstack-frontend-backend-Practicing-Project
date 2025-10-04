@@ -11,12 +11,13 @@ import Login from './Blog/Login'
 import EditForm from './Blog/EditForm';
 import Signup from './Blog/Signup'
 import LoginSignup from './Library System/LoginSignup'
+import Home from './Library System/Home'
 
 function App() {
 
   return (
     <>
-    <LoginSignup/>
+    <Home/>
     {/* <Routes>
       <Route path='/blog' element={<Blog/>} />
       <Route path='/form' element={<Form/>} />

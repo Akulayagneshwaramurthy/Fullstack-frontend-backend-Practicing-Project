@@ -64,6 +64,14 @@ app.post('/login', (req, res) => {
     });
 });
 
+app.get('/books', (req, res) => {
+    const sql = "SELECT * FROM books";
+    db.query(sql, (err, result) => {
+        if (err) return res.status(500).json({ error: "Database error" });
+        res.json(result);
+    });
+});
+
 
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on http://localhost:${PORT}`);
