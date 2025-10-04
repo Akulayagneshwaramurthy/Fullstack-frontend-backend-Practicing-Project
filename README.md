@@ -146,7 +146,7 @@ This project demonstrates a complete **Full Stack Web Application** using **Trav
 ## 📂 Tech Stack
 - **Backend:** Node.js, Express.js  
 - **Frontend:** React.js, Axios, Tailwind CSS  
-- **Authentication:** Custom Middleware  
+- **Authentication:** Custom Middleware
 
 ---
 
