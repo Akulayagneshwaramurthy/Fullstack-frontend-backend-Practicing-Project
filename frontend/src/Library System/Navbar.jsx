@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+const Navbar = ({search,setSearch}) => {
   return (
     <>
     <div className='flex justify-between gap-5 bg-black/40 h-20 w-full p-5'>
@@ -17,6 +17,8 @@ const Navbar = () => {
              focus:outline-none focus:ring-2 focus:ring-white
              transition duration-300"
   placeholder="Search.........."
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
 />
        </div>
        <div className='flex justify-around gap-4'>

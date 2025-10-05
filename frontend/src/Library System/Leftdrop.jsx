@@ -6,7 +6,7 @@ const Leftdrop = () => {
     <div className='bg-black/40 flex justify-around'>
         { side? (
       <div className='text-white text-center w-100 h-164 p-3 transition-transform duration-500 ease-in-out text-shadow:0_0_10px_rgba(255,255,255,0.9)'>
-        <i className="fa-regular fa-circle-user text-9xl drop-shadow:0_0_15px_rgba(255,255,255,0.9)"></i>
+        <i className="fa-regular fa-circle-user text-9xl drop-shadow:0_0_15px_rgba(255,255,255,0.9) text-shadow-[0_0_20px_rgba(255,255,255,0.9)]"></i>
         <div className='px-30 mt-10 py-1 border-2 border-white bg-transparent 
              text-xl text-white 
              placeholder-white text-shadow:0_0_10px_rgba(255,255,255,0.9)
