@@ -1,20 +1,41 @@
-import React, { useState, useEffect, use } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './navbar';
 import Leftdrop from './Leftdrop';
 import Products from './Products';
 import Addtocart from './Addtocart';
+import Profile from './Profile';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
+  const [genre,setGenre] = useState('');
+  const [profile,setProfile] = useState(false);
 
   useEffect(() => {
   setTimeout(() => {
       setLoading(false);
     }, 1000);
   }, []);
+  const prof = () => {
+    setProfile(true);
+  }
+
+  const all = () => {
+    setGenre('All')
+    setProfile(false);
+  }
+
+  const his = () => {
+    setGenre('Historical')
+    setProfile(false);
+  }
+
+  const adv = () => {
+    setGenre('Adventure')
+    setProfile(false);
+  }
 
   useEffect(() => {
     axios.get('http://localhost:5000/books')
@@ -22,15 +43,18 @@ const Home = () => {
       .catch(err => console.error(err));
   }, []);
 
-  const filterbooks = (books, query) => {
-    if (!query) {
-      return books;
-    } else {
-      return books.filter((book) => book.title.toLowerCase().includes(query.toLowerCase()));
-    } 
+  const filterbooks = (books, query ,genre) => {
+    let filtered = books;
+    if(genre && genre !== 'All'){
+      filtered = filtered.filter(book => book.genres.toLowerCase() === genre.toLowerCase());
+    }
+    if (query) {
+      filtered = filtered.filter(book => book.title.toLowerCase().includes(query.toLowerCase()));
+    }
+    return filtered;
   };
 
-  const filteredbooks = filterbooks(books, search);
+  const filteredbooks = filterbooks(books, search ,genre);
 
   return (
     <>
@@ -42,8 +66,10 @@ const Home = () => {
     <div className='bg-[url(https://cdn.pixabay.com/photo/2023/05/07/18/00/library-7976837_960_720.jpg)] bg-center bg-cover h-screen bg-black/40 bg-blend-multiply'>
       <Navbar search={search} setSearch={setSearch} />
       <div className='flex justify-between gap-2'>
-        <Leftdrop />
+        <Leftdrop setGenre={setGenre} prof={prof} adv={adv} his={his} all={all} />
+        {profile ? <Profile /> : 
         <Products books={books} filteredbooks={filteredbooks} />
+        }
         <Addtocart />
       </div>
     </div>

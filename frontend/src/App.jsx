@@ -12,6 +12,7 @@ import EditForm from './Blog/EditForm';
 import Signup from './Blog/Signup'
 import LoginSignup from './Library System/LoginSignup'
 import Home from './Library System/Home'
+import Profile from './Library System/Profile'
 
 function App() {
 

@@ -64,6 +64,14 @@ app.post('/login', (req, res) => {
     });
 });
 
+app.get('/users', (req, res) => {
+    const sql = "SELECT * FROM users";
+    db.query(sql, (err, result) => {
+        if (err) return res.status(500).json({ error: "Database error" });
+        res.json(result);
+    });
+});
+
 app.get('/books', (req, res) => {
     const sql = "SELECT * FROM books";
     db.query(sql, (err, result) => {
