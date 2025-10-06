@@ -14,7 +14,7 @@ It demonstrates the use of **CRUD operations (Create, Read, Update, Delete)** wi
 
 ### 🔹 Frontend (React.js + Tailwind CSS)
 - Built with **React.js (Vite)**  
-- State management using **useState**  
+- State management using **useState**
 - API integration with **axios** and lifecycle management using **useEffect**  
 - Modern, responsive UI with **Tailwind CSS**  
 
