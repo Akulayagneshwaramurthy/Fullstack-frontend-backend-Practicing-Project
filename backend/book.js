@@ -80,6 +80,22 @@ app.get('/books', (req, res) => {
     });
 });
 
+app.get('/books/:id', (req, res) => {
+  const { id } = req.params;
+  const sql = "SELECT * FROM books WHERE id = ?";
+  
+  db.query(sql, [id], (err, result) => {
+    if (err) {
+      return res.status(500).json({ error: "Database error" });
+    }
+    if (result.length === 0) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+    res.json(result[0]); // send single book object
+  });
+});
+
+
 
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on http://localhost:${PORT}`);

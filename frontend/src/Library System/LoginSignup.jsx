@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginSignup = () => {
+  const navigate = useNavigate();
+
   const [loading, setLoading] = useState(false);
   const [startedPage, setStartedPage] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
@@ -31,6 +34,7 @@ const LoginSignup = () => {
       if (res.status === 200 || res.status === 201) {
         alert(res.data.message);
       }
+      navigate("/home");
     } catch (err) {
       if (err.response) {
         setMessage(err.response.data.message || "Something went wrong!");

@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = ({search,setSearch}) => {
+  const navigate = useNavigate();
   return (
     <>
     <div className='flex justify-between gap-5 bg-black/40 h-20 w-full p-5'>
@@ -29,7 +31,7 @@ const Navbar = ({search,setSearch}) => {
              shadow-[inset_0_0_15px_rgba(255,255,255,0.9),0_0_25px_rgba(255,255,255,0.9)] 
              rounded-lg cursor-pointer
              focus:outline-none focus:ring-2 focus:ring-white
-             transition duration-300"'><i className="fa-solid fa-right-from-bracket mr-1"></i> Logout</div>
+             transition duration-300"' onClick={() => navigate('/Login')}><i className="fa-solid fa-right-from-bracket mr-1"></i> Logout</div>
              <div className='px-3 py-1 border-2 border-white bg-transparent 
              text-xl text-white 
              placeholder-white text-shadow:0_0_10px_rgba(255,255,255,0.9)
@@ -37,7 +39,7 @@ const Navbar = ({search,setSearch}) => {
              shadow-[inset_0_0_15px_rgba(255,255,255,0.9),0_0_25px_rgba(255,255,255,0.9)] 
              rounded-lg cursor-pointer
              focus:outline-none focus:ring-2 focus:ring-white
-             transition duration-300"'><i className="fa-solid fa-user"></i> Signout</div>
+             transition duration-300"' onClick={() => navigate('/Login')} ><i className="fa-solid fa-user"></i> Signout</div>
        </div>
     </div>    </>
   )
