@@ -47,97 +47,137 @@ const LoginSignup = () => {
     <>
       {/* Loading Spinner */}
       {loading ? (
-        <div className="flex items-center justify-center h-screen bg-[url('https://images5.alphacoders.com/808/thumb-1920-808254.jpg')] bg-cover bg-center bg-black/50 bg-blend-multiply">
-          <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-white shadow-[inset_0_0_15px_rgba(255,255,255,0.9),0_0_25px_rgba(255,255,255,0.9)]"></div>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-blue-900 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-white mx-auto mb-4"></div>
+            <p className="text-white text-lg">Preparing Your Library...</p>
+          </div>
         </div>
       ) : !startedPage ? (
         // Initial "Get Start" page
-        <div className="bg-[url('https://images5.alphacoders.com/808/thumb-1920-808254.jpg')] text-shadow-[0_0_20px_rgba(255,255,255,0.6)] bg-cover bg-center bg-black/50 bg-blend-multiply h-screen flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-white font-bold text-6xl md:text-7xl mb-6 drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
-            Library Books
-          </h1>
-          <p className="text-white text-lg md:text-xl mb-6">
-            Library books are a valuable resource that provide knowledge, stories, and research material to readers of all ages.
-          </p>
-          <button
-            onClick={handleGetStart}
-            className="bg-white text-black py-3 px-8 cursor-pointer rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.6)] hover:shadow-[0_0_30px_rgba(255,255,255,0.9)] hover:scale-105 transition transform duration-300"
-          >
-            <i className="fa-solid fa-play mr-3"></i>
-            Get Start
-          </button>
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-blue-900 flex flex-col items-center justify-center text-center px-4 py-8">
+          <div className="max-w-2xl mx-auto">
+            
+            <h1 className="text-white font-bold text-5xl md:text-6xl lg:text-7xl mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text">
+              Library Books
+            </h1>
+            
+            <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
+              Discover a world of knowledge, stories, and research material. 
+              Your digital library awaits with books for every reader.
+            </p>
+            
+            <button
+              onClick={handleGetStart}
+              className="group bg-gradient-to-r cursor-pointer from-blue-600 to-purple-600 text-white py-4 px-12 rounded-full font-bold shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 transform"
+            >
+              <i className="fa-solid fa-play mr-3 group-hover:scale-110 transition-transform"></i>
+              Get Started
+            </button>
+          </div>
         </div>
       ) : (
         // Login/Signup form
-        <div className="relative bg-[url('https://images5.alphacoders.com/808/thumb-1920-808254.jpg')] bg-cover bg-center bg-black/50 bg-blend-multiply h-screen flex items-center justify-center px-4">
-          <div className="bg-white/20 backdrop-blur-md w-full max-w-md p-8 rounded-xl shadow-lg border border-white/30 ring-2 ring-white/20 hover:ring-white/40 transition duration-300">
-            <h2 className="text-center text-4xl font-bold text-white mb-6">
-              {isSignup ? "Sign Up" : "Login"}
-            </h2>
-
-            {/* Username */}
-            <label className="block text-white text-lg font-medium mb-2">Username</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter your username"
-              className="w-full py-2 px-4 mb-4 rounded-md bg-white/30 text-black border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/60"
-            />
-
-            {/* Email for Signup */}
-            {isSignup && (
-              <>
-                <label className="block text-white text-lg font-medium mb-2">Email</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="w-full py-2 px-4 mb-4 rounded-md bg-white/30 text-black border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/60"
-                />
-              </>
-            )}
-
-            {/* Password */}
-            <label className="block text-white text-lg font-medium mb-2">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              className="w-full py-2 px-4 mb-6 rounded-md bg-white/30 text-black border border-white/20 focus:outline-none focus:ring-2 focus:ring-white/60"
-            />
-
-            {/* Action Button */}
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-blue-900 flex items-center justify-center px-4 py-8">
+          <div className="w-full max-w-md">
+            {/* Back Button */}
             <button
-              onClick={handleSubmit}
-              className="w-full bg-white text-black py-2 rounded-full cursor-pointer font-bold shadow-[0_0_20px_rgba(255,255,255,0.6)] hover:shadow-[0_0_30px_rgba(255,255,255,0.9)] hover:scale-105 transition transform duration-300 mb-4"
+              onClick={() => setStartedPage(false)}
+              className="flex items-center gap-2 cursor-pointer text-white/80 hover:text-white mb-6 transition-colors group"
             >
-              {isSignup ? "Sign Up" : "Login"}
+              <i className="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+              Back to Home
             </button>
 
-            {/* Toggle Login/Signup */}
-            <div className="text-center text-white">
-              {isSignup ? (
-                <span>
-                  Already have an account?{" "}
-                  <button className="underline font-semibold cursor-pointer" onClick={() => setIsSignup(false)}>
-                    Login
-                  </button>
-                </span>
-              ) : (
-                <span>
-                  Don’t have an account?{" "}
-                  <button className="underline font-semibold cursor-pointer" onClick={() => setIsSignup(true)}>
-                    Sign Up
-                  </button>
-                </span>
-              )}
-            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-white mb-2">
+                  {isSignup ? "Create Account" : "Welcome Back"}
+                </h2>
+                <p className="text-gray-300">
+                  {isSignup ? "Join our library community" : "Sign in to your account"}
+                </p>
+              </div>
 
-            {/* Message */}
-            {message && <p className="text-center text-white mt-4">{message}</p>}
+              {/* Form */}
+              <div className="space-y-4">
+                {/* Username */}
+                <div>
+                  <label className="block text-white text-sm font-medium mb-2">
+                    <i className="fa-solid fa-user mr-2 text-blue-400"></i>
+                    Username
+                  </label>
+                  <input
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="Enter your username"
+                    className="w-full py-3 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                  />
+                </div>
+
+                {/* Email for Signup */}
+                {isSignup && (
+                  <div>
+                    <label className="block text-white text-sm font-medium mb-2">
+                      <i className="fa-solid fa-envelope mr-2 text-purple-400"></i>
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email"
+                      className="w-full py-3 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
+                    />
+                  </div>
+                )}
+
+                {/* Password */}
+                <div>
+                  <label className="block text-white text-sm font-medium mb-2">
+                    <i className="fa-solid fa-lock mr-2 text-green-400"></i>
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                    className="w-full py-3 px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
+                  />
+                </div>
+
+                {/* Action Button */}
+                <button
+                  onClick={handleSubmit}
+                  className="w-full bg-gradient-to-r cursor-pointer from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 transform mt-6"
+                >
+                  {isSignup ? "Create Account" : "Sign In"}
+                </button>
+
+                {/* Toggle Login/Signup */}
+                <div className="text-center pt-4">
+                  <p className="text-gray-400">
+                    {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
+                    <button
+                      className="text-blue-400 hover:text-blue-300 cursor-pointer font-semibold transition-colors"
+                      onClick={() => setIsSignup(!isSignup)}
+                    >
+                      {isSignup ? "Sign In" : "Create Account"}
+                    </button>
+                  </p>
+                </div>
+
+                {/* Message */}
+                {message && (
+                  <div className="mt-4 p-3 rounded-lg bg-white/10 border border-white/20">
+                    <p className="text-white text-center text-sm">{message}</p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       )}

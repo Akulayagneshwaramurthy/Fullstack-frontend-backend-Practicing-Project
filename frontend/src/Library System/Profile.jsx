@@ -17,7 +17,7 @@ const Profile = () => {
   }, [])
 
   return (
-    <div className='bg-black/40 h-60 w-full mt-20 p-5 text-white text-shadow-[0_0_20px_rgba(255,255,255,0.6)] drop-shadow-[0_0_20px_rgba(255,255,255,0.9)] ml-20 rounded-lg'>
+    <div className='bg-black/40 h-60 w-150 mt-20 p-5 text-white text-shadow-[0_0_20px_rgba(255,255,255,0.6)] drop-shadow-[0_0_20px_rgba(255,255,255,0.9)] ml-20 rounded-lg'>
       <div className='text-4xl text-center mb-4 text-shadow-[0_0_20px_rgba(255,255,255,0.6)]'>
         User Account
       </div>
