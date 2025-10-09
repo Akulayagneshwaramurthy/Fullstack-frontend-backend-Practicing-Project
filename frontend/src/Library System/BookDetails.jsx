@@ -58,7 +58,7 @@ const BookDetails = ({ addtocart }) => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-4 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between mb-5">
           <button
             onClick={() => navigate('/home')}
             className="flex items-center gap-2 cursor-pointer px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition border border-white/10"

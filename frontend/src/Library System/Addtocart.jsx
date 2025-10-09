@@ -59,17 +59,32 @@ const Addtocart = ({ cartItems = [] }) => {
               <div className="space-y-3">
                 {cartItems.map((item) => (
                   <div
-                    key={item.id}
-                    className="bg-white/5 rounded-lg p-3 border border-white/10 hover:border-blue-400/30 transition duration-200"
-                  >
-                    <p className="font-medium text-sm mb-1 line-clamp-2">{item.title}</p>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-green-400 font-bold">₹{item.price_in_INR}</span>
-                      <button className="text-red-400 hover:text-red-300 transition">
-                        <i className="fa-solid fa-trash text-xs"></i>
-                      </button>
-                    </div>
-                  </div>
+  key={item.id}
+  className="bg-white/5 cursor-pointer rounded-lg p-3 border border-white/10 hover:border-blue-400/30 transition duration-200 flex gap-3"
+>
+  {/* Image */}
+  <div className="flex-shrink-0 w-16 h-16 bg-gray-800 rounded-md overflow-hidden">
+    <img 
+      src={item.image || "/placeholder-image.jpg"} 
+      alt={item.title}
+      className="w-full h-full object-cover"
+      onError={(e) => {
+        e.target.src = "/placeholder-image.jpg";
+      }}
+    />
+  </div>
+
+  {/* Content */}
+  <div className="flex-1 min-w-0">
+    <p className="font-medium text-sm mb-1 line-clamp-2">{item.title}</p>
+    <div className="flex justify-between items-center text-xs">
+      <span className="text-green-400 font-bold">₹{item.price_in_INR}</span>
+      <button className="text-red-400 cursor-pointer hover:text-red-300 transition">
+        <i className="fa-solid fa-trash text-xs"></i>
+      </button>
+    </div>
+  </div>
+</div>
                 ))}
               </div>
             )}
