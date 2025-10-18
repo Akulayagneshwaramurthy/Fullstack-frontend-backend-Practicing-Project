@@ -155,3 +155,91 @@ This project demonstrates a complete **Full Stack Web Application** using **Trav
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
+
+
+# 📚 Library Books Information System  
+
+A **Full Stack Web Application** built using **Vite + React.js**, **Node.js + Express.js**, and **MySQL**.  
+This project allows users to browse library books, add them to a cart (using local storage), and manage user/book data from a connected MySQL database.  
+
+---
+
+## 🚀 Tech Stack  
+
+| Layer | Technology |
+|--------|-------------|
+| **Frontend** | React.js (Vite) |
+| **Backend** | Node.js + Express.js |
+| **Database** | MySQL |
+| **State Management** | Local Storage (for cart data) |
+| **API Communication** | RESTful APIs via Axios / Fetch |
+
+---
+
+## 📖 Features  
+
+✅ User Login & Registration (MySQL-based)  
+✅ View and Search Library Books  
+✅ Add Books to Cart (Local Storage)  
+✅ Responsive User Interface  
+✅ Secure Backend API with Express.js  
+✅ Clean Project Structure  
+
+📝 *Note:*  
+The **Add to Cart** feature is handled via **Local Storage**, and **Order functionality is not implemented** in this version.  
+
+---
+
+## 🧩 Project Structure  
+
+Library-Books-Info/
+├── backend/
+│ ├── server.js
+│ ├── routes/
+│ ├── controllers/
+│ ├── models/
+│ └── config/
+├── frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ ├── pages/
+│ │ ├── App.jsx
+│ │ └── main.jsx
+│ └── package.json
+├── database/
+│ └── library_db.sql
+└── README.md
+
+
+---
+
+## ⚙️ Installation & Setup  
+
+### 🖥️ Backend Setup  
+1. Navigate to the backend folder:  
+   ```bash
+   cd backend
+
+2.Install dependencies:
+npm install
+
+3.Configure database connection in .env or config file:
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=library_db
+
+4.Start the backend server:
+npm start
+Server runs at: http://localhost:5000
+
+### 💻 Frontend Setup
+1.Navigate to the frontend folder:
+cd frontend
+
+2.Install dependencies:
+npm install
+
+3.Start the React app:
+npm run dev
+App runs at: http://localhost:5173
